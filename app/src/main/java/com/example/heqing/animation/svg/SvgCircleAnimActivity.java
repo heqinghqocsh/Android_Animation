@@ -18,9 +18,11 @@ public class SvgCircleAnimActivity extends AppCompatActivity
         implements View.OnClickListener {
 
     private ImageView[] imageViews;
+    private ImageView circleHook;
     private Button begin;
 
     private AnimatedVectorDrawable[] animDrawable;
+    private AnimatedVectorDrawable circleHookAnim;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class SvgCircleAnimActivity extends AppCompatActivity
         imageViews[2] = (ImageView) findViewById(R.id.circle_3);
         imageViews[3] = (ImageView) findViewById(R.id.circle_4);
         imageViews[4] = (ImageView) findViewById(R.id.circle_5);
+        circleHook = (ImageView) findViewById(R.id.circle_hook);
 
         begin = (Button) findViewById(R.id.begin);
         begin.setOnClickListener(this);
@@ -41,6 +44,11 @@ public class SvgCircleAnimActivity extends AppCompatActivity
             animDrawable[i] = (AnimatedVectorDrawable) getResources()
                     .getDrawable(R.drawable.circle_anim, null);
         }
+
+        circleHookAnim = (AnimatedVectorDrawable) getResources()
+                .getDrawable(R.drawable.circle_hook_anim, null);
+        circleHook.setImageDrawable(circleHookAnim);
+        circleHookAnim.start();
     }
 
     @Override
@@ -57,6 +65,8 @@ public class SvgCircleAnimActivity extends AppCompatActivity
             imageViews[i].setImageDrawable(animDrawable[i]);
             animDrawable[i].start();
         }
+        circleHook.setImageDrawable(circleHookAnim);
+        circleHookAnim.start();
     }
 
 }

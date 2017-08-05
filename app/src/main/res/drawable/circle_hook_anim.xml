@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/circle_hook_vector">
+
+    <target
+        android:name="hook"
+        android:animation="@animator/anim_circle" />
+    <target
+        android:name="circle"
+        android:animation="@animator/anim_circle" />
+
+</animated-vector>
