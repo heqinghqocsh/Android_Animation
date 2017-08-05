@@ -28,7 +28,7 @@ public class ScreenSlideActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_screen_slide);
 
-        viewPager = findViewById(R.id.pager);
+        viewPager = (ViewPager) findViewById(R.id.pager);
         int num = getIntent().getIntExtra("anim", 1);
         switch (num) {
             case 1:

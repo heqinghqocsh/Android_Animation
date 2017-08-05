@@ -47,7 +47,7 @@ public class CardFlipActivity extends AppCompatActivity
         super.onCreateOptionsMenu(menu);
         MenuItem item = menu.add(Menu.NONE, R.id.action_flip, Menu.NONE
                 , mShowingBack ? "图片" : "描述");
-        item.setIcon(mShowingBack ? R.mipmap.ic_action_photo : R.mipmap.ic_action_info);
+        item.setIcon(mShowingBack ? R.drawable.ic_action_photo : R.drawable.ic_action_info);
         item.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
         return true;
     }

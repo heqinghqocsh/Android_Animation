@@ -16,7 +16,7 @@
             android:layout_height="100dp"
             android:layout_marginRight="1dp"
             android:scaleType="center"
-            android:src="@mipmap/demo" />
+            android:src="@drawable/demo" />
 
     </LinearLayout>
 

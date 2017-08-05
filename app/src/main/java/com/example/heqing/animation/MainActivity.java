@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.example.heqing.animation.cardflip.CardFlipActivity;
 import com.example.heqing.animation.crossfading.CrossfadeActivity;
+import com.example.heqing.animation.scene.FirstActivity;
 import com.example.heqing.animation.viewpager.ScreenSlideActivity;
 import com.example.heqing.animation.zooming.ZoomingActivity;
 
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @OnClick({R.id.viewpager_zoom, R.id.viewpager_depth
-            , R.id.crossfade,R.id.card_flip,R.id.zoom_view})
+            , R.id.crossfade, R.id.card_flip, R.id.zoom_view, R.id.scene})
     public void onViewClicked(View view) {
         Intent intent = new Intent();
         switch (view.getId()) {
@@ -62,6 +63,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.zoom_view:
                 intent.setClass(this, ZoomingActivity.class);
+                break;
+            case R.id.scene:
+                intent.setClass(this, FirstActivity.class);
                 break;
         }
         startActivity(intent);

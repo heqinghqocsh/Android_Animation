@@ -46,7 +46,7 @@ public class ScreenSlidePageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_screen_slide_page, container, false);
         view.setBackgroundColor(color);
-        textView = view.findViewById(R.id.content);
+        textView = (TextView) view.findViewById(R.id.content);
         textView.setText(text);
         return view;
     }
