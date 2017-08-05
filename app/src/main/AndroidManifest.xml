@@ -19,10 +19,9 @@
         <activity android:name=".scene.FirstActivity" />
 
         <activity android:name=".scene.SecondActivity" />
-
         <activity android:name=".viewpager.ScreenSlideActivity" />
-
         <activity android:name=".crossfading.CrossfadeActivity" />
+        <activity android:name=".cardflip.CardFlipActivity"/>
     </application>
 
 </manifest>

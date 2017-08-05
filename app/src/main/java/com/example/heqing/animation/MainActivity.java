@@ -2,13 +2,12 @@ package com.example.heqing.animation;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.heqing.animation.cardflip.CardFlipActivity;
 import com.example.heqing.animation.crossfading.CrossfadeActivity;
 import com.example.heqing.animation.viewpager.ScreenSlideActivity;
 
@@ -28,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     TextView viewpagerDepth;
     @BindView(R.id.crossfade)
     TextView crossfade;
+    @BindView(R.id.card_flip)
+    TextView cardFlip;
 
     private Unbinder unbinder;
 
@@ -39,20 +40,23 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @OnClick({R.id.viewpager_zoom, R.id.viewpager_depth,R.id.crossfade})
+    @OnClick({R.id.viewpager_zoom, R.id.viewpager_depth, R.id.crossfade,R.id.card_flip})
     public void onViewClicked(View view) {
         Intent intent = new Intent();
         switch (view.getId()) {
             case R.id.viewpager_zoom:
                 intent.setClass(this, ScreenSlideActivity.class);
-                intent.putExtra("anim",1);
+                intent.putExtra("anim", 1);
                 break;
             case R.id.viewpager_depth:
                 intent.setClass(this, ScreenSlideActivity.class);
-                intent.putExtra("anim",2);
+                intent.putExtra("anim", 2);
                 break;
             case R.id.crossfade:
                 intent.setClass(this, CrossfadeActivity.class);
+                break;
+            case R.id.card_flip:
+                intent.setClass(this, CardFlipActivity.class);
                 break;
         }
         startActivity(intent);
@@ -63,4 +67,5 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         unbinder.unbind();
     }
+
 }

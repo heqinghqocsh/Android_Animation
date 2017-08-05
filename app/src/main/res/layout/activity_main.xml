@@ -39,6 +39,16 @@
             android:gravity="center"
             android:padding="10dp"
             android:text="Crossfading Two Views" />
+
+        <TextView
+            android:id="@+id/card_flip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Card Flip Animations" />
     </LinearLayout>
 
 
