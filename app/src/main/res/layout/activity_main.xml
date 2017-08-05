@@ -29,6 +29,16 @@
             android:gravity="center"
             android:padding="10dp"
             android:text="ViewPager动画（Depth）" />
+
+        <TextView
+            android:id="@+id/crossfade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Crossfading Two Views" />
     </LinearLayout>
 
 

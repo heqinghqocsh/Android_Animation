@@ -12,7 +12,6 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -22,6 +21,8 @@
         <activity android:name=".scene.SecondActivity" />
 
         <activity android:name=".viewpager.ScreenSlideActivity" />
+
+        <activity android:name=".crossfading.CrossfadeActivity" />
     </application>
 
 </manifest>
