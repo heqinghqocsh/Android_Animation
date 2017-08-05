@@ -16,13 +16,14 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".scene.FirstActivity" />
+        <activity android:name=".scene.SceneActivity" />
 
         <activity android:name=".scene.SecondActivity" />
         <activity android:name=".viewpager.ScreenSlideActivity" />
         <activity android:name=".crossfading.CrossfadeActivity" />
         <activity android:name=".cardflip.CardFlipActivity"/>
         <activity android:name=".zooming.ZoomingActivity"/>
+        <activity android:name=".svg.SvgCircleAnimActivity"/>
     </application>
 
 </manifest>

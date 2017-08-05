@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.example.heqing.animation.R;
 
-public class FirstActivity extends AppCompatActivity {
+public class SceneActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,8 +21,8 @@ public class FirstActivity extends AppCompatActivity {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FirstActivity.this,SecondActivity.class);
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(FirstActivity.this,img,"img");
+                Intent intent = new Intent(SceneActivity.this,SecondActivity.class);
+                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SceneActivity.this,img,"img");
                 startActivity(intent,options.toBundle());
             }
         });

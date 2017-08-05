@@ -5,76 +5,65 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.example.heqing.animation.cardflip.CardFlipActivity;
 import com.example.heqing.animation.crossfading.CrossfadeActivity;
-import com.example.heqing.animation.scene.FirstActivity;
+import com.example.heqing.animation.scene.SceneActivity;
+import com.example.heqing.animation.svg.SvgCircleAnimActivity;
 import com.example.heqing.animation.viewpager.ScreenSlideActivity;
 import com.example.heqing.animation.zooming.ZoomingActivity;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-import butterknife.Unbinder;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by HeQing on 2017/7/31.
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+        implements AdapterView.OnItemClickListener {
 
-    @BindView(R.id.viewpager_zoom)
-    TextView viewpagerZoom;
-    @BindView(R.id.viewpager_depth)
-    TextView viewpagerDepth;
-    @BindView(R.id.crossfade)
-    TextView crossfade;
-    @BindView(R.id.card_flip)
-    TextView cardFlip;
-
-    private Unbinder unbinder;
+    private HashMap<String, Class> map = new HashMap<>(16);
+    private List<String> dataList;
+    private ListView listView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        unbinder = ButterKnife.bind(this);
+        listView = (ListView) findViewById(R.id.listview);
 
+        map.put("ViewPager动画（缩放）", ScreenSlideActivity.class);
+        map.put("ViewPager动画（Depth）", ScreenSlideActivity.class);
+        map.put("Crossfading Two Views", CrossfadeActivity.class);
+        map.put("Card Flip Animations", CardFlipActivity.class);
+        map.put("Zooming a View", ZoomingActivity.class);
+        map.put("scene", SceneActivity.class);
+        map.put("SVG Circle Anim", SvgCircleAnimActivity.class);
+
+        dataList = new ArrayList<>(map.keySet());
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this
+                , R.layout.text_list_item, R.id.textview, dataList);
+        listView.setAdapter(arrayAdapter);
+        listView.setOnItemClickListener(this);
     }
 
-    @OnClick({R.id.viewpager_zoom, R.id.viewpager_depth
-            , R.id.crossfade, R.id.card_flip, R.id.zoom_view, R.id.scene})
-    public void onViewClicked(View view) {
-        Intent intent = new Intent();
-        switch (view.getId()) {
-            case R.id.viewpager_zoom:
-                intent.setClass(this, ScreenSlideActivity.class);
-                intent.putExtra("anim", 1);
-                break;
-            case R.id.viewpager_depth:
-                intent.setClass(this, ScreenSlideActivity.class);
-                intent.putExtra("anim", 2);
-                break;
-            case R.id.crossfade:
-                intent.setClass(this, CrossfadeActivity.class);
-                break;
-            case R.id.card_flip:
-                intent.setClass(this, CardFlipActivity.class);
-                break;
-            case R.id.zoom_view:
-                intent.setClass(this, ZoomingActivity.class);
-                break;
-            case R.id.scene:
-                intent.setClass(this, FirstActivity.class);
-                break;
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        if (position < dataList.size()) {
+            Intent intent = new Intent();
+            intent.setClass(this, map.get(dataList.get(position)));
+            startActivity(intent);
         }
-        startActivity(intent);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        unbinder.unbind();
+        map.clear();
     }
 
 }
