@@ -7,7 +7,7 @@
         android:id="@+id/circle_5"
         android:layout_width="176dp"
         android:layout_height="176dp"
-        android:layout_gravity="center" />
+        android:layout_gravity="center|bottom" />
 
     <ImageView
         android:id="@+id/circle_hook"

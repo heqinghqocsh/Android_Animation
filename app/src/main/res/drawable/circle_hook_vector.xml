@@ -7,6 +7,15 @@
 
     <path
         android:name="circle"
+        android:pathData="
+        M 10,50 A 40 40 0 1 0 10 49
+        M 30,50 L 45,65 L 75,35"
+        android:strokeColor="@color/colorAccent"
+        android:strokeLineCap="round"
+        android:strokeWidth="3" />
+
+    <!--<path
+        android:name="circle"
         android:pathData="M 10,50
             A 40 40 0 1 0 10 49"
         android:strokeColor="@color/colorAccent"
@@ -20,6 +29,6 @@
         L 75,35"
         android:strokeColor="@color/colorAccent"
         android:strokeLineCap="round"
-        android:strokeWidth="3" />
+        android:strokeWidth="3" />-->
 
 </vector>
