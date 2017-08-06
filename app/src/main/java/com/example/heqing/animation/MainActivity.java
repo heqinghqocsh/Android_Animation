@@ -11,6 +11,7 @@ import android.widget.ListView;
 
 import com.example.heqing.animation.cardflip.CardFlipActivity;
 import com.example.heqing.animation.crossfading.CrossfadeActivity;
+import com.example.heqing.animation.layout_anim.LayoutChangeAnimActivity;
 import com.example.heqing.animation.scene.SceneActivity;
 import com.example.heqing.animation.svg.SvgCircleAnimActivity;
 import com.example.heqing.animation.viewpager.ScreenSlideActivity;
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity
         map.put("Zooming a View", ZoomingActivity.class);
         map.put("scene", SceneActivity.class);
         map.put("SVG Circle Anim", SvgCircleAnimActivity.class);
+        map.put("LayoutChangeAnim", LayoutChangeAnimActivity.class);
 
         dataList = new ArrayList<>(map.keySet());
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this

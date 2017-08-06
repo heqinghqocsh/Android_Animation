@@ -24,6 +24,7 @@
         <activity android:name=".cardflip.CardFlipActivity"/>
         <activity android:name=".zooming.ZoomingActivity"/>
         <activity android:name=".svg.SvgCircleAnimActivity"/>
+        <activity android:name=".layout_anim.LayoutChangeAnimActivity"/>
     </application>
 
 </manifest>
