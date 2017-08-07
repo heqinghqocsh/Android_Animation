@@ -2,4 +2,5 @@
 <resources>
     <item name="action_next" type="id"/>
     <item name="action_flip" type="id"/>
+    <item name="action_vector_anim" type="id"/>
 </resources>
