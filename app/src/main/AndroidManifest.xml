@@ -26,6 +26,7 @@
         <activity android:name=".svg.SvgCircleAnimActivity"/>
         <activity android:name=".layout_anim.LayoutChangeAnimActivity"/>
         <activity android:name=".circular.CircularAnimActivity"/>
+        <activity android:name=".circular.CircularSecondActivity"/>
     </application>
 
 </manifest>
