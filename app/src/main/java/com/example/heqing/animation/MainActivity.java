@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.heqing.animation.cardflip.CardFlipActivity;
+import com.example.heqing.animation.circular.CircularAnimActivity;
 import com.example.heqing.animation.crossfading.CrossfadeActivity;
 import com.example.heqing.animation.layout_anim.LayoutChangeAnimActivity;
 import com.example.heqing.animation.scene.SceneActivity;
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity
         map.put("scene", SceneActivity.class);
         map.put("SVG Circle Anim", SvgCircleAnimActivity.class);
         map.put("LayoutChangeAnim", LayoutChangeAnimActivity.class);
+        map.put("CircularAnim", CircularAnimActivity.class);
 
         dataList = new ArrayList<>(map.keySet());
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this

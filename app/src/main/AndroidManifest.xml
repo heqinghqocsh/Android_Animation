@@ -25,6 +25,7 @@
         <activity android:name=".zooming.ZoomingActivity"/>
         <activity android:name=".svg.SvgCircleAnimActivity"/>
         <activity android:name=".layout_anim.LayoutChangeAnimActivity"/>
+        <activity android:name=".circular.CircularAnimActivity"/>
     </application>
 
 </manifest>
