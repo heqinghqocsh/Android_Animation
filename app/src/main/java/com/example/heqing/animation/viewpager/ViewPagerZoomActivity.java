@@ -14,7 +14,7 @@ import com.example.heqing.animation.R;
  * Created by HeQing on 2017/7/31.
  */
 
-public class ScreenSlideActivity extends FragmentActivity {
+public class ViewPagerZoomActivity extends FragmentActivity {
 
     private static final int NUM_PAGES = 5;
     private ViewPager viewPager;
@@ -26,18 +26,11 @@ public class ScreenSlideActivity extends FragmentActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_screen_slide);
+        setContentView(R.layout.view_pager_layout);
 
         viewPager = (ViewPager) findViewById(R.id.pager);
         int num = getIntent().getIntExtra("anim", 1);
-        switch (num) {
-            case 1:
-                viewPager.setPageTransformer(true, new ZoomOutPageTransform());
-                break;
-            case 2:
-                viewPager.setPageTransformer(true, new DepthPageTransformer());
-                break;
-        }
+        viewPager.setPageTransformer(true, new ZoomOutPageTransform());
         pagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(pagerAdapter);
     }
