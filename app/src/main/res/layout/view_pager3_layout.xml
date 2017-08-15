@@ -1,15 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="200dp"
-    android:clipChildren="false"
-    android:layerType="software">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/pager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:clipChildren="false" />
-</FrameLayout>
+  <android.support.v4.view.ViewPager
+      android:id="@+id/pager_1"
+      android:layout_width="match_parent"
+      android:layout_height="200dp"
+      android:clipToPadding="false"
+      android:overScrollMode="never"
+      android:paddingLeft="50dp"
+      android:paddingRight="50dp"/>
+
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1"/>
+
+  <android.support.v4.view.ViewPager
+      android:id="@+id/pager_2"
+      android:layout_width="match_parent"
+      android:layout_height="200dp"
+      android:clipToPadding="false"
+      android:overScrollMode="never"
+      android:paddingLeft="50dp"
+      android:paddingRight="50dp"/>
+
+</LinearLayout>
