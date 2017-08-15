@@ -47,7 +47,7 @@ public class ViewPager3Activity extends AppCompatActivity {
 
     pager2Adapter = new CardPagerAdapter(dataList);
     viewPager2.setPageMargin(20);
-    viewPager2.setPageTransformer(false,new ShadowTransformer(viewPager2,pager2Adapter));
+    viewPager2.setPageTransformer(false,new ShadowTransformer());
     viewPager2.setAdapter(pager2Adapter);
   }
 
