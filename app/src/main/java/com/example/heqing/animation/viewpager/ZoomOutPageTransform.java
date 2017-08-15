@@ -9,17 +9,17 @@ import android.view.View;
 
 public class ZoomOutPageTransform implements ViewPager.PageTransformer {
 
-  private static final float MIN_SCALE = 0.7f;
+    private static final float MIN_SCALE = 0.8f;
 
-  @Override
-  public void transformPage(View page, float position) {
-    if (position < -1 || position > 1) {
-      page.setScaleX(MIN_SCALE);
-      page.setScaleY(MIN_SCALE);
-    } else if (position <= 1) { // [-1,1]
-      float scale = 1 - 0.2f * Math.abs(position);
-      page.setScaleX(scale);
-      page.setScaleY(scale);
+    @Override
+    public void transformPage(View page, float position) {
+        if (position < -1 || position > 1) {
+            page.setScaleX(MIN_SCALE);
+            page.setScaleY(MIN_SCALE);
+        } else { // [-1,1]
+            float scale = 1 - 0.2f * Math.abs(position);
+            page.setScaleX(scale);
+            page.setScaleY(scale);
+        }
     }
-  }
 }

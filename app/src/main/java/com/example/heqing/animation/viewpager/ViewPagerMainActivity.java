@@ -33,7 +33,8 @@ public class ViewPagerMainActivity extends AppCompatActivity implements AdapterV
 
         dataList.add(new ListItemModel("ViewPager动画（缩放）", ViewPagerZoomActivity.class));
         dataList.add(new ListItemModel("ViewPager动画（Depth）", ViewPagerDepthActivity.class));
-        dataList.add(new ListItemModel("ViewPager动画", ViewPager3Activity.class));
+        dataList.add(new ListItemModel("ViewPager(显示左右两边一点)方法一", ViewPager3Activity.class));
+        dataList.add(new ListItemModel("ViewPager(显示左右两边一点)方法二", ViewPagerRightLeftActivity.class));
 
         ArrayAdapter<ListItemModel> arrayAdapter = new ArrayAdapter<>(this
                 , R.layout.text_list_item, R.id.textview, dataList);

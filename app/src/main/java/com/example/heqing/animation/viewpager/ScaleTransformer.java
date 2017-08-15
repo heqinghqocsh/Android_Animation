@@ -4,11 +4,11 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 
 
-public class ShadowTransformer implements ViewPager.PageTransformer {
+public class ScaleTransformer implements ViewPager.PageTransformer {
 
     private ViewPager mViewPager;
 
-    public ShadowTransformer() {
+    public ScaleTransformer() {
     }
 
     @Override
