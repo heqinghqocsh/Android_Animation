@@ -1,10 +1,12 @@
 package com.example.heqing.animation.system_bar;
 
 import android.app.Activity;
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
 import android.support.annotation.FloatRange;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -41,6 +43,26 @@ public class SystemBarHelper {
     } else {
       window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
     }
+  }
+
+  /** 增加View的高度以及paddingTop,增加的值为状态栏高度.一般是在沉浸式全屏给ToolBar用的 */
+  public static void setHeightAndPadding(Context context, View view) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+      ViewGroup.LayoutParams lp = view.getLayoutParams();
+      lp.height += getStatusBarHeight(context);//增高
+      view.setPadding(view.getPaddingLeft(), view.getPaddingTop() + getStatusBarHeight(context),
+          view.getPaddingRight(), view.getPaddingBottom());
+    }
+  }
+
+  /** 获取状态栏高度 */
+  public static int getStatusBarHeight(Context context) {
+    int result = 0;
+    int resId = context.getResources().getIdentifier("status_bar_height", "dimen", "android");
+    if (resId > 0) {
+      result = context.getResources().getDimensionPixelSize(resId);
+    }
+    return result;
   }
 
 }
