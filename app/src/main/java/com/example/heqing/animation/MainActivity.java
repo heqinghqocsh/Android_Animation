@@ -16,6 +16,7 @@ import com.example.heqing.animation.layout_anim.LayoutChangeAnimActivity;
 import com.example.heqing.animation.model.ListItemModel;
 import com.example.heqing.animation.scene.SceneActivity;
 import com.example.heqing.animation.svg.SvgCircleAnimActivity;
+import com.example.heqing.animation.system_bar.SystemBarMainActivity;
 import com.example.heqing.animation.viewpager.ViewPagerMainActivity;
 import com.example.heqing.animation.zooming.ZoomingActivity;
 
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity
         dataList.add(new ListItemModel("SVG Circle Anim", SvgCircleAnimActivity.class));
         dataList.add(new ListItemModel("LayoutChangeAnim", LayoutChangeAnimActivity.class));
         dataList.add(new ListItemModel("CircularAnim", CircularAnimActivity.class));
+        dataList.add(new ListItemModel("状态栏效果", SystemBarMainActivity.class));
 
         ArrayAdapter<ListItemModel> arrayAdapter = new ArrayAdapter<>(this
                 , R.layout.text_list_item, R.id.textview, dataList);

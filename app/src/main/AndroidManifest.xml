@@ -30,6 +30,15 @@
         <activity android:name=".viewpager.ViewPagerMainActivity" />
         <activity android:name=".viewpager.ViewPager3Activity"/>
         <activity android:name=".viewpager.ViewPagerRightLeftActivity"/>
+
+        <activity android:name=".system_bar.SystemBarMainActivity"/>
+        <activity android:name=".system_bar.Immersive1StatusBarActivity"
+                  android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".system_bar.Immersive2StatusBarActivity"
+                  android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".system_bar.Immersive3StatusBarActivity"
+                  android:theme="@style/AppTheme.NoActionBar"/>
+
     </application>
 
 </manifest>
